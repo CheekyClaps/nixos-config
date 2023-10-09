@@ -75,7 +75,7 @@
     description = "user";
     shell = pkgs.zsh;
     extraGroups = [
-      "docket" 
+      "docker" 
       "networkmanager"
       "storage" 
       "wheel"
@@ -86,7 +86,7 @@
   # Window manager
   programs.hyprland = {
     enable = true;
-    package = inputs.hyprland.packages.${pkgs.system}.hyprland;
+    #package = inputs.hyprland.packages.${pkgs.system}.hyprland;
   };
 
   # Helps enable screen sharing
