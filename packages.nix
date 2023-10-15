@@ -56,6 +56,7 @@
 
     # CLI Utils
     bat # Syntax highlighting and Git integration
+    brightnessctl # Wayland brightness control
     busybox # Common UNIX utilities
     dmidecode # Reads information from BIOS (SMBIOS/DMI)
     docker
@@ -63,9 +64,12 @@
     cmake # Make tools
     etcher # USB Flasher    
     git
+    gcc # C compiler
+    htop
     jq # JSON Processer
     killall # Stop processes
     kubectl # Kubernetes cluster control
+    lua # lua language
     ncdu # Disk usage analyzer
     neofetch # System information display
     nmap # Network scanner/mapper
@@ -76,6 +80,12 @@
     stow
     v4l-utils
     wl-clipboard # Command-line copy/paste utilities for Wayland
+
+    # ZSH
+    zsh-autocomplete
+    zsh-clipboard
+    zsh-syntax-highlighting
+    zsh-you-should-use
   ];
   
   # Fonts

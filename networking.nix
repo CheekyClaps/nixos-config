@@ -3,7 +3,10 @@
 {   
   networking = {
     hostName = "nixos";
-    networkmanager.enable = true;
+    networkmanager = {
+      enable = true;
+      wifi.macAddress = "random";
+    };
     firewall = {
       enable = true;
       checkReversePath = false;
@@ -29,4 +32,6 @@
     '';
   };
 
+  # Start networkmanager anyway..
+  #systemd.services.NetworkManager-wait-online.enable = false;
 }

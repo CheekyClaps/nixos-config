@@ -16,10 +16,27 @@
 
   # List services that you want to enable:
   services = {
-    # OpenSSH daemon
     openssh.enable = true;
+    dbus.enable = true; # Bus coms
+    thermald.enable = true; # Thermals regulation
+    gvfs.enable = true; # Gnome virtual file system
 
-    dbus.enable = true;
+    # Power management
+    tlp = {
+      enable = true;
+      settings = {
+        CPU_SCALING_GOVERNOR_ON_AC = "performance";
+        CPU_SCALING_GOVERNOR_ON_BAT = "powersave";
+
+        CPU_ENERGY_PERF_POLICY_ON_BAT = "power";
+        CPU_ENERGY_PERF_POLICY_ON_AC = "performance";
+
+        CPU_MIN_PERF_ON_AC = 0;
+        CPU_MAX_PERF_ON_AC = 100;
+        CPU_MIN_PERF_ON_BAT = 0;
+        CPU_MAX_PERF_ON_BAT = 20;
+      };
+    };
 
     # Configure keymap in X11
     xserver = {
@@ -82,11 +99,11 @@
     ];
     packages = with pkgs; [];
   };
-   
+
   # Window manager
   programs.hyprland = {
     enable = true;
-    #package = inputs.hyprland.packages.${pkgs.system}.hyprland;
+   # package = inputs.hyprland.packages.${pkgs.system}.hyprland;
   };
 
   # Helps enable screen sharing
